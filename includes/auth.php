@@ -97,7 +97,6 @@ return [
     'success' => true,
     'message' => 'Registration successful! Please check your email for verification code.',
     'user_id' => $userId,
-    'verification_code' => $verificationCode // samo za testiranje
 ];
     } catch (Exception $e) {
         if (isset($db)) $db->close();
@@ -200,7 +199,6 @@ function loginUser($username, $password) {
             'message' => 'Please check your email for the 2FA code.',
             'step' => '2fa',
             'user_id' => $user['id'],
-            'two_factor_code' => $twoFactorCode // ova e isto samo za testiranje
         ];
     } catch (Exception $e) {
         if (isset($db)) $db->close();
